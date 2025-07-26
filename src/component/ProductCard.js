@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 const ProductCard = () => {
   const products = [
@@ -35,10 +36,10 @@ const ProductCard = () => {
   const [quantity, setQuantity] = useState(1);
 
   const decrease = (e) => {
-    e.stopPropagation(); 
+    e.stopPropagation();
     if (quantity > 1) setQuantity(quantity - 1);
   };
-  
+
 
   const increase = (e) => {
     e.stopPropagation();
@@ -62,7 +63,7 @@ const ProductCard = () => {
                 className="w-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               />
             </div>
-            
+
 
             <p className="font-semibold mt-2">{product.name}</p>
             <p className="text-[#192853]">
@@ -88,7 +89,7 @@ const ProductCard = () => {
             className="w-full max-w-[500px]  rounded-2xl shadow-lg block md:hidden"
           />
 
-            <img
+          <img
             src="https://drinkjuni.com/cdn/shop/files/Untitled_design_-_2025-02-10T220532.357.jpg?v=1739243149&width=1070"
             alt="Promo Desktop"
             className="w-full max-w-[500px] h-[650px] rounded-2xl shadow-lg hidden md:block"
@@ -101,9 +102,12 @@ const ProductCard = () => {
           <p className="text-[40px] md:text-[50px] font-bold leading-tight mb-4">Live Tour</p>
           <p className="text-lg mb-1">All orders are automatically entered to</p>
           <p className="text-lg mb-4">win. Ends March 31st, 2025.</p>
-          <button className="mt-2 bg-[#192853] text-white px-8 py-4 w-[260px] rounded-xl text-lg hover:cursor-pointer hover:bg-gray-800 transition duration-300">
-            Shop now
-          </button>
+          <Link to="/product">
+            <button className="mt-2 bg-[#192853] text-white px-8 py-4 w-[260px] rounded-xl text-lg hover:cursor-pointer hover:bg-gray-800 transition duration-300">
+              Shop now
+            </button>
+          </Link>
+
         </div>
       </div>
 
